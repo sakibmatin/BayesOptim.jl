@@ -1,6 +1,8 @@
 
 
 function Fit(Objective, interval, max_iter)
+    DIR = @__DIR__
+    @pyinclude(DIR*"/Bopt.py")
     py"""
     bounds = $interval
     max_iter = $max_iter
