@@ -1,18 +1,14 @@
 module BayesOptim
-
-# using Pkg
+using Pkg
 # Pkg.build("PyCall") 
-# using PyCall
+using PyCall
 
-function Bopt_test()
-    println("Hello 1")
-end
+DIR = @__DIR__
+@pyinclude(DIR*"/Bopt.py")
 
-export Bopt_test
+include("SafetyChecks.jl")
+include("Fit.jl")
 
-# include("Bopt.py")
-# @pyinclude("Bopt.py")
-
-# Write your package code here.
+export Fit
 
 end
