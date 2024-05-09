@@ -49,7 +49,7 @@ function Fit(Objective, interval, max_iter)
         
         # Evaluate Objective
         x_next = Opt_Acquisition(X, GP_model, bounds=bounds, explore=exploreRate)
-        x_next = x_next.round(decimals=4, out=None)
+        x_next = x_next.round(decimals=5, out=None)
         params ={"ID":idx}
         for p,i in zip(bounds, range(len(bounds))):
             params[p] = x_next[0,i]
